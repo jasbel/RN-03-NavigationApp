@@ -26,4 +26,5 @@ Se aprendio a usar props propios de drawer y stack para poder manipular con exit
 
 en drawer se aprendio a customizar el menu
 
+retroaalimentacionde notuse flipper en ios podfile (averiguar si estas usando para ios)
 etc..
