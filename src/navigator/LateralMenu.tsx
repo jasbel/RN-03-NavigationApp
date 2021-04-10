@@ -4,6 +4,9 @@ import { NavigatorStack } from './NavigatorStack';
 import { SettingScreen } from '../screens/SettingScreen';
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { styles } from '../theme/appTheme';
+import {Tabs} from './Tabs';
+import { colors } from '../theme/colors';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +19,8 @@ export const LateralMenu = () => {
             drawerType={width >= 680 ? 'permanent' : 'front'}
             drawerContent={ (props) => <InternalMenu {...props} /> }
         >
-            <Drawer.Screen name="NavigatorStack" options={{ title: 'Home' }} component={NavigatorStack} />
+            {/* <Drawer.Screen name="NavigatorStack" options={{ title: 'Home' }} component={NavigatorStack} /> */}
+            <Drawer.Screen name="Tabs" component={Tabs} />
             <Drawer.Screen name="SettingScreen" options={{ title: 'Setting' }} component={SettingScreen} />
         </Drawer.Navigator>
     )
@@ -30,12 +34,14 @@ const InternalMenu = (props: DrawerContentComponentProps<DrawerContentOptions>) 
     return (
         <DrawerContentScrollView>
             <View style={styles.containerAvatar}>
-                <Image
-                    style={styles.avatar}
-                    source= {{
-                        uri: 'https://i.dlpng.com/static/png/6191850-user-png-94-images-in-collection-page-2-user-png-800_800_preview.png'
-                    }}
-                />
+                <View style={styles.contentAvatar}>
+                    <Image
+                        style={styles.avatar}
+                        source= {{
+                            uri: 'https://i.dlpng.com/static/png/6191850-user-png-94-images-in-collection-page-2-user-png-800_800_preview.png'
+                        }}
+                    />
+                </View>
             </View>
 
             {/* Options Menu */}
@@ -44,15 +50,15 @@ const InternalMenu = (props: DrawerContentComponentProps<DrawerContentOptions>) 
             >
                 <TouchableOpacity
                     style={styles.buttonMenu}
-                    onPress={()=>navigation.navigate('NavigatorStack')}
+                    onPress={()=>navigation.navigate('Tabs')}
                 >
-                    <Text style={styles.textMenu}> navigation Stack </Text>
+                    <Text style={styles.textMenu}> <Icon name='library-outline' size={20} color={'black'} /> Navigation </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonMenu}
                     onPress={()=>navigation.navigate('SettingScreen')}
                 >
-                    <Text style={styles.textMenu}> Setting </Text>
+                    <Text style={styles.textMenu}> <Icon name='settings-outline' size={20} color={'black'} /> Setting </Text>
                 </TouchableOpacity>
             </View>
         </DrawerContentScrollView>

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { color } from 'react-native-reanimated';
 import { colors } from './colors';
 
 export const styles = StyleSheet.create({
@@ -24,13 +25,18 @@ export const styles = StyleSheet.create({
     /* Drawer */
     containerAvatar: {
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 20,
+    },
+    contentAvatar: {
+        alignItems: 'center',
+        borderRadius: 100,
+        borderWidth: 10,
+        borderColor: colors.light,
+        backgroundColor: colors.light,
     },
     avatar: {
         width: 60,
         height: 60,
-        borderRadius: 100,
-        backgroundColor: colors.light
     },
     containerMenu: {
         marginVertical: 30,

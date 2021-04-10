@@ -1,5 +1,12 @@
 apply plugin: "com.android.application"
 
+/* Instalacion iconos
+    https://github.com/oblador/react-native-vector-icons */
+project.ext.vectoricons = [
+    iconFontNames: [ 'Ionicons.ttf']
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 import com.android.build.OutputFile
 
 /**
