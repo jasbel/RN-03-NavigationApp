@@ -1,11 +1,10 @@
 import React from 'react';
-import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView } from '@react-navigation/drawer'
-import { NavigatorStack } from './NavigatorStack';
+import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentOptions, DrawerContentScrollView } from '@react-navigation/drawer';
+// import { NavigatorStack } from './NavigatorStack';
 import { SettingScreen } from '../screens/SettingScreen';
 import { Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import { styles } from '../theme/appTheme';
 import {Tabs} from './Tabs';
-import { colors } from '../theme/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Drawer = createDrawerNavigator();
